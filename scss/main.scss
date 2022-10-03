@@ -1,0 +1,39 @@
+@import "./resets";
+@import './variables';
+
+
+$font-weights:(
+    "regular":400,
+    "medium": 500,
+    "bold": 700,
+);
+@function weight($wiegth-name){
+  @return map-get($font-weights, $wiegth-name );
+}
+
+$primary-color:#0b0b0b;
+$accent-color:#454545;
+$text-color:#fff;
+
+
+
+
+body {
+    background: $primary-color;
+    color: $text-color;
+}
+
+.main{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  #{&}_paragraph{
+    font-weight:weight(bold);
+    &:hover {
+      color:pink
+    }
+  }
+  
+}
